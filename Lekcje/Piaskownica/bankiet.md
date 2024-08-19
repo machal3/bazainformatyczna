@@ -12,7 +12,7 @@ Opracuj program, który:
 
 ## Wejście
 
-W pierwszym wierszu zapisano liczbę gości $N (1 \leq N \ leq )$. Goście są ponumerowani kolejnymi liczbami naturalnymi od $1$ do $N$. W drugim wierszu zapisano numer gościa siedzącego po lewej stronie pierwszego gościa. w trzecim wierszu zapisano numer gościa siedzącego po lewej stronie drugiego gościa itd. W $i$-tym wierszu zapisano numer gościa siedzącego po lewej stronie $(i-1)$-tego gościa. W $N+1$-szym wierszu zapisano numer gościa siedzącego po lewej stronie $N$-tego gościa.
+W pierwszym wierszu zapisano liczbę gości $N (1 \leq N \leq )$. Goście są ponumerowani kolejnymi liczbami naturalnymi od $1$ do $N$. W drugim wierszu zapisano numer gościa siedzącego po lewej stronie pierwszego gościa. w trzecim wierszu zapisano numer gościa siedzącego po lewej stronie drugiego gościa itd. W $i$-tym wierszu zapisano numer gościa siedzącego po lewej stronie $(i-1)$-tego gościa. W $N+1$-szym wierszu zapisano numer gościa siedzącego po lewej stronie $N$-tego gościa.
 
 ## Wyjście
 W pierwszym wierszu wypisz liczbę stolików potrzebnych do usadzenia wszystkich gości.
