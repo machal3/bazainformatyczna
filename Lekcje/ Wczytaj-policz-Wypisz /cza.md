@@ -4,7 +4,7 @@
 Napisz program, który przelicza czas podany w sekundach na zapis uwzględniający godziny, minuty oraz sekundy.
 ## Wejście
 
-Jedyny wiersz wejścia zawiera jedną liczbę całkowitą $t(1\leq t \leq 1000000), oznaczającą czas wyrażony w sekundach.
+Jedyny wiersz wejścia zawiera jedną liczbę całkowitą $t(1 \leq t \leq 1000000)$, oznaczającą czas wyrażony w sekundach.
 ## Wyjście
 
 Twój program powinien wyrazić czas $t$ w postaci $ggmmss$, gdzie $g, m, s$ , i oznaczają odpowiednio liczbę $g$ godzin, $m# minut i $s$ sekund, i wypisać to wyrażenie na wyjście. Innymi słowy, godzin, minut i sekund powinno łącznie dawać sekund.
