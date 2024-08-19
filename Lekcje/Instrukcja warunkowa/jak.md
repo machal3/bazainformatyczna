@@ -2,9 +2,7 @@
 ## Limit pamięci: 256 MB
 
 W tym zadaniu Twój program powinien rozwiązać łamigłówkę postaci:
-$$
-a ? b == c
-$$
+$$a ? b == c$$
 
 W tej łamigłówce , i będą danymi liczbami całkowitymi nieujemnymi, a Twoim zadaniem jest powiedzieć, jakie działanie należy wstawić zamiast znaku zapytania, aby zachodziła równość. Masz do dyspozycji omówione już działania języka C++:
 

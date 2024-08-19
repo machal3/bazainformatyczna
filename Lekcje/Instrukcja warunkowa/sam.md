@@ -5,7 +5,7 @@
 Napisz program, który wczyta literę i sprawdzi, czy jest ona samogłoską.
 ## Wejście
 
-Na wejściu znajduje się tylko jedna **mała(()) litera alfabetu angielskiego (a zatem nie są możliwe polskie "ogonki", np. ą, ć).
+Na wejściu znajduje się tylko jedna **mała** litera alfabetu angielskiego (a zatem nie są możliwe polskie "ogonki", np. ą, ć).
 ## Wyjście
 
 Twój program powinien wypisać tylko jedno słowo: `tak`, jeśli wczytana litera jest samogłoską, a `nie`, jeśli jest spółgłoską.
