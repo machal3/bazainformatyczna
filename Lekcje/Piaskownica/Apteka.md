@@ -6,14 +6,15 @@ Jaś stoi ostatni w kolejce do apteki. Ponieważ Jasiowi bardzo się śpieszy, t
 Każda osoba jest chętna do zamiany, ale $i$ - tej osobie za przesunięcie o każde jedno miejsce dalej w kolejce trzeba zapłacić $c_{1}$. Dokładniej, jeśli Jaś jest $k$ miejsc $(k > 0)$ dalej od kasy niż pewna osoba i jeśli chce się z nią zamienić miejscami, to musi jej zapłacić kwotę $k \cdot c_1$ .
 
 Jaś chciałby być pierwszy w kolejce i zastanawia się, jak dokonywać zamian, aby wydać jak najmniej.
-Wejście
+
+## Wejście
 
 Pierwszy wiersz standardowego wejścia zawiera jedną liczbę całkowitą (), oznaczającą liczbę osób, które stoją przed Jasiem w kolejce do apteki.
 
 Następny wiersz wejścia zawiera liczb całkowitych (), gdzie oznacza kwotę, jaką Jaś musi zapłacić -tej osobie za przesunięcie o każde miejsce dalej w kolejce. Kolejność osób liczona jest od osoby, za którą bezpośrednio stoi Jaś, a więc od końca kolejki do jej początku.
 
 Możesz założyć, że w przynajmniej przypadków testowych zachodzi warunek: .
-Wyjście
+## Wyjście
 
 Pierwszy i jedyny wiersz standardowego wyjścia powinien zawierać jedną liczbę całkowitą, równą minimalnej kwocie, jaką Jaś musi zapłacić, aby być pierwszym w kolejce.
 
