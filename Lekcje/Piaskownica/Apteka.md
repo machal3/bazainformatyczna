@@ -3,7 +3,7 @@
 
 Jaś stoi ostatni w kolejce do apteki. Ponieważ Jasiowi bardzo się śpieszy, to postanowił, że spróbuje się pozamieniać miejscami z niektórymi osobami, nawet jeśli musiałby za to zapłacić.
 
-Każda osoba jest chętna do zamiany, ale *i* - tej osobie za przesunięcie o każde jedno miejsce dalej w kolejce trzeba zapłacić *c_{1}*. Dokładniej, jeśli Jaś jest *k* miejsc (*k > 0*) dalej od kasy niż pewna osoba i jeśli chce się z nią zamienić miejscami, to musi jej zapłacić kwotę *k * c_1* .
+Każda osoba jest chętna do zamiany, ale *i* - tej osobie za przesunięcie o każde jedno miejsce dalej w kolejce trzeba zapłacić \[c_{1}\]. Dokładniej, jeśli Jaś jest *k* miejsc (*k > 0*) dalej od kasy niż pewna osoba i jeśli chce się z nią zamienić miejscami, to musi jej zapłacić kwotę *k * c_1* .
 
 Jaś chciałby być pierwszy w kolejce i zastanawia się, jak dokonywać zamian, aby wydać jak najmniej.
 Wejście
