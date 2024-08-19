@@ -14,7 +14,7 @@ Napisz program, który:
 
 ## Wejście
 
-W pierwszym i jedynym wierszu wejścia znajdują się cztery liczby naturalne $w_1, k_1, w_2 i k_2 (1 \leq w_2, k_1, w_2, k_2 \leq 1000)$, pooddzielane pojedynczymi odstępami.
+W pierwszym i jedynym wierszu wejścia znajdują się cztery liczby naturalne $w_1, k_1, w_2~i~k_2 (1 \leq w_2, k_1, w_2, k_2 \leq 1000)$, pooddzielane pojedynczymi odstępami.
 
 ## Wyjście
 
