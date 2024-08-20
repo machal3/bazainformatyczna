@@ -1,1 +1,2 @@
-# bazainformatyczna
+# Baza informatyczna zadań
+Zawiera przeróżne zadania z WWI, lekcji, kół...
