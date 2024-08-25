@@ -1,2 +1,6 @@
 # Baza informatyczna zadań
-Zawiera przeróżne zadania z WWI, lekcji, kół...
+
+## Co znajduje się w repozytorium
+- 🗃️ - Treści zadań z rozmaitych konkursów, klas, wyjazdów i kólek
+- 💬 - Dyskusje na temat treści zadań i ich rozwiązań
+- ✅ - Poprawne rozwiązania na zadania.
