@@ -1,86 +1,67 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
-
-int pojemnosc;
-int ilosc_przedmiotow;
-
-struct komorka
-{
-    int wartosc;
-    int_fast32_t poprzednie;
-};
-
-struct przedmiot
-{
-    int masa;
-    int wartosc;
-};
-
-przedmiot przedmioty[101];
-
-komorka tab[101][10001];
-
-int kozackafuncka (int a , int b)
-{
-    if (a < b)
-    {
-        return 0;
-    }
-    else
-    {
-        return (a - b);
-    }
-}
 
 int main ()
 {
-    cin >> ilosc_przedmiotow >> pojemnosc;
+    // Wczytanie danych
+    int n , m;
+    cin >> n >> m;
 
-    for (int i = 1; i < ilosc_przedmiotow + 1; i++)
+    vector<int> masy (n + 1);
+    vector<int> wartosci (n + 1);
+
+    for (int i = 1; i <= n; i++)
     {
-        cin >> przedmioty[i].masa;
+        cin >> masy[i];
     }
 
-    for (int i = 1; i < ilosc_przedmiotow + 1; i++)
+    for (int i = 1; i <= n; i++)
     {
-        cin >> przedmioty[i].wartosc;
+        cin >> wartosci[i];
     }
 
-    //koniec wczytu
+    vector<vector<int>> tab (n + 1 , vector<int> (m + 1 , 0));
 
-    for (int j = 1; j < pojemnosc + 1; j++)
+    vector<vector<bool>> wybrany (n + 1 , vector<bool> (m + 1 , false));
+
+    for (int i = 1; i <= n; i++)
     {
-        for (int i = 1; i < ilosc_przedmiotow + 1; i++)
+        for (int j = 0; j <= m; j++)
         {
+            tab[i][j] = tab[i - 1][j];
 
-            if (przedmioty[i].masa > j)
+            if (j >= masy[i])
             {
-                tab[i][j].wartosc = tab[i - 1][j].wartosc;
-            }
-
-            else if (tab[i - 1][j].wartosc > (tab[i - 1][kozackafuncka (j , przedmioty[i].masa)].wartosc + przedmioty[i].wartosc))
-            {
-                tab[i][j].wartosc = tab[i - 1][j].wartosc;
-            }
-            else
-            {
-                tab[i][j].wartosc = tab[i - 1][kozackafuncka (j , przedmioty[i].masa)].wartosc + przedmioty[i].wartosc;
-                tab[i][j].poprzednie = przedmioty[i].masa;
+                if (tab[i][j] < tab[i - 1][j - masy[i]] + wartosci[i])
+                {
+                    tab[i][j] = tab[i - 1][j - masy[i]] + wartosci[i];
+                    wybrany[i][j] = true;
+                }
             }
         }
     }
-    for (int j = 1; j < pojemnosc + 1; j++)
+
+    int maksym = tab[n][m];
+    cout << maksym << endl;
+
+    vector<int> wziete;
+    int w = m;
+
+    for (int i = n; i >= 1; i--)
     {
-        for (int i = 1; i < ilosc_przedmiotow + 1; i++)
+        if (wybrany[i][w])
         {
-            cout << tab[i][j].poprzednie << " ";
+            wziete.push_back (i);
+            w -= masy[i];
         }
-        cout << endl;
     }
 
-    for (int j = 1; j < pojemnosc + 1; j++)
+    cout << wziete.size () << endl;
+
+    for (int i = wziete.size () - 1; i >= 0; i--)
     {
-        cout << tab[ilosc_przedmiotow][pojemnosc].wartosc;
+        cout << wziete[i] << " ";
     }
-
+    cout << endl;
 }
