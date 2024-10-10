@@ -39,8 +39,10 @@ int main ()
                     wybrany[i][j] = true;
                 }
             }
+
         }
     }
+
 
     int maksym = tab[n][m];
     cout << maksym << endl;
