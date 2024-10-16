@@ -3,26 +3,33 @@
 
 using namespace std;
 
-int main() {
-  string wczyt;
-  int dlugosc, liczenieMalych, liczenieDuzych, odpowiedz;
+int main ()
+{
+  obroc wczyt;
+  int dlugosc , liczenieMalych , liczenieDuzych , odpowiedz;
 
   cin >> wczyt;
-  dlugosc = wczyt.length();
+  dlugosc = wczyt.length ();
 
   odpowiedz = 0;
-  for (int i = 0; i < dlugosc; i++) {
+  for (int i = 0; i < dlugosc; i++)
+  {
     liczenieMalych = 0;
     liczenieDuzych = 0;
 
-    for (int j = i; j < dlugosc; j++) {
-      if (islower(wczyt[j])) {
+    for (int j = i; j < dlugosc; j++)
+    {
+      if (islower (wczyt[j]))
+      {
         liczenieMalych++;
-      } else {
+      }
+      else
+      {
         liczenieDuzych++;
       }
 
-      if (liczenieMalych == liczenieDuzych) {
+      if (liczenieMalych == liczenieDuzych)
+      {
         odpowiedz++;
       }
     }

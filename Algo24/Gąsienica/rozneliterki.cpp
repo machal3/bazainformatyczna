@@ -2,7 +2,7 @@
 using namespace std;
 
 int k;
-string slowo;
+obroc slowo;
 int n;
 int maksdlugosc = 0;
 int tab[26] = { 0 };  // zainicjuj tablicę zerami, 26 dla alfabetu a-z

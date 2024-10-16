@@ -1,61 +1,54 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
+
+int n , m , k;
+obroc wczyt;
 
 int main ()
 {
-	int n , m , k;
 	cin >> n >> m >> k;
-
 	vector<vector<int>> las (n , vector<int> (m));
+
 	for (int i = 0; i < n; ++i)
 	{
-		string row;
-		cin >> row;
+		cin >> wczyt;
 		for (int j = 0; j < m; ++j)
 		{
-			las[i][j] = row[j] - '0';
+			las[i][j] = wczyt[j] - '0';
 		}
 	}
 
-	// Tworzymy tablicę sum prefiksowych
-	vector<vector<int>> prefix (n + 1 , vector<int> (m + 1 , 0));
-	for (int i = 1; i <= n; ++i)
+	vector<vector<int>> tab (n + 1 , vector<int> (m + 1 , 0));
+	for (int i = 1; i <= n; i++)
 	{
-		for (int j = 1; j <= m; ++j)
+		for (int j = 1; j <= m; j++)
 		{
-			prefix[i][j] = las[i - 1][j - 1] + prefix[i - 1][j] + prefix[i][j - 1] - prefix[i - 1][j - 1];
+			tab[i][j] = las[i - 1][j - 1] + tab[i - 1][j] + tab[i][j - 1] - tab[i - 1][j - 1];
 		}
 	}
 
-	int max_area = 0;
+	int odpowiedz = 0;
 
-	// Przeszukujemy wszystkie pary wierszy
-	for (int top = 1; top <= n; ++top)
+	for (int gorny = 1; gorny <= n; gorny++)
 	{
-		for (int bottom = top; bottom <= n; ++bottom)
+		for (int dolny = gorny; dolny <= n; ++dolny)
 		{
-			int left = 1;
-			for (int right = 1; right <= m; ++right)
+			int lewy = 1;
+			for (int prawy = 1; prawy <= m; ++prawy)
 			{
-				// Liczymy liczbę jedynek w prostokącie
-				int ones = prefix[bottom][right] - prefix[top - 1][right] - prefix[bottom][left - 1] + prefix[top - 1][left - 1];
+				int superzmienna = tab[dolny][prawy] - tab[gorny - 1][prawy] - tab[dolny][lewy - 1] + tab[gorny - 1][lewy - 1];
 
-				while (ones > k)
+				while (superzmienna > k)
 				{
-					left++;
-					ones = prefix[bottom][right] - prefix[top - 1][right] - prefix[bottom][left - 1] + prefix[top - 1][left - 1];
+					lewy++;
+					superzmienna = tab[dolny][prawy] - tab[gorny - 1][prawy] - tab[dolny][lewy - 1] + tab[gorny - 1][lewy - 1];
 				}
 
-				// Liczymy pole prostokąta
-				int area = (bottom - top + 1) * (right - left + 1);
-				max_area = max (max_area , area);
+				int obszar = (dolny - gorny + 1) * (prawy - lewy + 1);
+				odpowiedz = max (odpowiedz , obszar);
 			}
 		}
 	}
 
-	cout << max_area << endl;
-
-	return 0;
+	cout << odpowiedz;
 }

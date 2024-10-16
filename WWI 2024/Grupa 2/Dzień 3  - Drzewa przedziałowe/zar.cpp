@@ -4,7 +4,7 @@ using namespace std;
 int dlugosc_podstawy;
 int ilosc_zarowek;
 int ilosc_akcji;
-string podczatkowe_zarowki;
+obroc podczatkowe_zarowki;
 char wczyt_char;
 int a;
 int b;

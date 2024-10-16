@@ -11,7 +11,7 @@ int main ()
 	ios_base::sync_with_stdio (0);
 	cin.tie (0);
 
-	string pierwsze_slowo , drugie_slowo;
+	obroc pierwsze_slowo , drugie_slowo;
 	cin >> pierwsze_slowo >> drugie_slowo;
 	dlugosc_pierwszego = pierwsze_slowo.size ();
 	dlugosc_drugiego = drugie_slowo.size ();
@@ -50,7 +50,7 @@ int main ()
 	}
 	cout << maksymalny << "\n";
 
-	string op;
+	obroc op;
 
 	while (tab[i_maksymalny.first][i_maksymalny.second] != 0)
 	{

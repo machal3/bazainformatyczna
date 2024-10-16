@@ -3,7 +3,7 @@ using namespace std;
 
 bool tab[3000000];
 int dlugosc_ciagu , ilosc_zapytan;
-string wczyt;
+obroc wczyt;
 int odpowiedz;
 int wczyt2;
 

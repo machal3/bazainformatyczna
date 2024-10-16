@@ -89,6 +89,4 @@ int main ()
         free (prefix[i]);
     }
     free (prefix);
-
-    return 0;
 }
