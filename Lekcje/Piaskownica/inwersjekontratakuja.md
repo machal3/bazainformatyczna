@@ -1,6 +1,6 @@
 # Inwersje kontraatakują
 
-Napisz program, który dla danego ciągu obliczy liczbę jego inwersji. Inwersją nazywamy taką parę (niekoniecznie kolejnych) indeksów $(i,j)$, że $i<j$, ale $a_i > $a_j$. Na przykład ciąg $(1,3,4,2)$ ma 2 inwersje: $(3,2)$ oraz $(4,2)$.
+Napisz program, który dla danego ciągu obliczy liczbę jego inwersji. Inwersją nazywamy taką parę (niekoniecznie kolejnych) indeksów $(i,j)$, że $i<j$, ale $a_i$ > $a_j$. Na przykład ciąg $(1,3,4,2)$ ma 2 inwersje: $(3,2)$ oraz $(4,2)$.
 
 ## Zadanie
 Napisz program, który:
