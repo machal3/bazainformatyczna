@@ -1,7 +1,7 @@
 # Papryczki logarytmiczne
 Hitem sezonu w bajtockim warzywniaku są papryczki logarytmiczne. Jak sama nazwa wskazuje, wagi papryczek, wyrażone w gramach, są wyłącznie potęgami dwójki między $2^a$ a $2^k$.
 
-[[![papryczki](https://www.agrofakt.pl/wp-content/uploads/2024/01/produkcja-papryki.jpg)]]
+![papryczki](https://www.agrofakt.pl/wp-content/uploads/2024/01/produkcja-papryki.jpg)
 
 
 Typowy przebieg transakcji w warzywniaku wygląda tak, że klient prosi o $x$ gramów papryczek i sprzedawca wydaje mu dokładnie taką ich masę, posługując się wyłącznie całymi papryczkami. Może się niestety tak zdarzyć, że zamówienie klienta będzie niemożliwe do spełnienia. Pomóż sprzedawcy sprawdzić, na ile jest on zabezpieczony przed taką feralną sytuacją, czyli wyznaczyć najmniejszą taką liczbę naturalną $x$ z zamówienia nie do zrealizowania.
