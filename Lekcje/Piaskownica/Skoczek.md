@@ -1,5 +1,5 @@
-(K,N)-skoczek [B]
-Limit pamięci: 32 MB
+# (K,N)-skoczek [B]
+## Limit pamięci: 32 MB
 Jedną z najdziwniejszych odmian szachów na świecie są szachy bajtockie. Rozegranie partii stanowi poważną trudność, gdyż gra toczy się na nieskończonej szachownicy. Podstawową umiejętnością, której uczą się młodzi pasjonaci szachów bajtockich, jest rozpatrywanie możliwych sytuacji na planszy po wielu milionach posunięć. W tym celu muszą wiedzieć, czy dana figura może przejść pomiędzy dwoma wskazanymi polami.
 
 Najmocniejszą spośród figur w szachach bajtockich jest $(K, N)$-skoczek. Jego ruchy przypominają nieco ruchy skoczka w klasycznych szachach (niepoprawnie zwanego czasem konikiem). W każdym ruchu może on wykonać jedno z dwóch posunięć: przesunąć się o $K$ pól w pionie, a następnie o $N$ pól w poziomie albo najpierw przesunąć się o $N$ pól w pionie, a następnie o $K$ pól w poziomie. Skoczka z szachów klasycznych można więc uznać za $(2,1)$-skoczka lub $(1,2)$-skoczka.
