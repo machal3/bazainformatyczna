@@ -3,9 +3,9 @@
 
 using namespace std;
 
-const int MAXN = 200005;
+const int duużo = 200005;
 
-vector<int> graf[MAXN];
+vector<int> graf[duużo];
 int n , k;
 long long wynik = 0;
 
