@@ -14,7 +14,11 @@ int wieksza (int a , int b)
 	{
 		return a;
 	}
-	return b;
+	else
+	{
+		return b;
+
+	}
 }
 
 
@@ -26,9 +30,9 @@ int main ()
 	{
 		cin >> x >> y;
 
-		for (int i = 1; i < x + 1; i++)
+		for (int i = 1; i < y + 1; i++)
 		{
-			for (int j = 1; j < y + 1; j++)
+			for (int j = 1; j < x + 1; j++)
 			{
 				cin >> diamenty[i][j];
 			}
@@ -36,15 +40,15 @@ int main ()
 
 		//depeczek
 
-		for (int i = 1; i < x + 1; i++)
+		for (int i = 1; i < y + 1; i++)
 		{
-			for (int j = 1; j < y + 1; j++)
+			for (int j = 1; j < x + 1; j++)
 			{
 				dp[i][j] = wieksza (dp[i - 1][j] , dp[i][j - 1]) + diamenty[i][j];
 			}
 		}
 
-		cout << dp[x][y] << "\n";
+		cout << dp[y][x] << "\n";
 	}
 
 
