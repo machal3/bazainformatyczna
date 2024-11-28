@@ -1,64 +1,76 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 struct Element
 {
-    int cyfra;
-    int wskaznik;
-    bool usuniente;
+	int cyfra;
+	int wskaznik;
+	bool usuniety;
 };
 
 Element lista[200001];
-int poczontek = -1;
-int iloscoperacji;
-int x , y;
+int poczatek = -1;
 
 int main ()
 {
-    cin >> iloscoperacji;
-    char s;
+	int iloscOperacji;
+	cin >> iloscOperacji;
 
-    for (int i = 1; i < iloscoperacji + 1; i++)
-    {
-        cin >> s;
-        if (s == '>')
-        {
-            cin >> lista[i].cyfra;
-            lista[i].wskaznik = poczontek;
-            poczontek = i;
-        }
-        else if (s == '<')
-        {
-            if (poczontek != -1)
-            {
-                lista[poczontek].usuniente = true;
-                poczontek = lista[poczontek].wskaznik;
-            }
-        }
-        else if (s == '-')
-        {
-            cin >> x;
-            if (x >= 0 && x < 1000)
-            {
-                lista[x].usuniente = true;
-            }
-        }
-        else if (s == '+')
-        {
-            cin >> x >> y;
-            lista[i].cyfra = x;
-            lista[i].wskaznik = lista[y].wskaznik;
-            lista[y].wskaznik = i;
-        }
-    }
+	for (int i = 1; i <= iloscOperacji; i++)
+	{
+		string operacja;
+		cin >> operacja;
 
-    for (int i = poczontek; i != -1; i = lista[i].wskaznik)
-    {
-        if (lista[i].usuniente == false)
-        {
-            cout << lista[i].cyfra << " ";
-        }
-    }
+		if (operacja == ">")
+		{
+			int x;
+			cin >> x;
+			lista[i].cyfra = x;
+			lista[i].wskaznik = poczatek;
+			lista[i].usuniety = 0;
+			poczatek = i;
+		}
+		else if (operacja == "+")
+		{
+			int x , y;
+			cin >> x >> y;
+			lista[i].cyfra = x;
+			lista[i].wskaznik = lista[y].wskaznik;
+			lista[i].usuniety = 0;
+			lista[y].wskaznik = i;
+		}
+		else if (operacja == "<")
+		{
+			int i = poczatek;
+			while (true)
+			{
+				if (lista[i].usuniety == 0)
+				{
+					lista[i].usuniety = 1;
+					break;
+				}
+
+				i = lista[i].wskaznik;
+			}
+
+
+		}
+		else if (operacja == "-")
+		{
+			int y;
+			cin >> y;
+			lista[y].usuniety = 1;
+		}
+	}
+
+	int chodzi = poczatek;
+	while (chodzi != -1)
+	{
+		if (!lista[chodzi].usuniety)
+			cout << lista[chodzi].cyfra << " ";
+		chodzi = lista[chodzi].wskaznik;
+	}
+
+	return 0;
 }
