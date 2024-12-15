@@ -1,51 +1,61 @@
-#include <iostream>
-#include <vector>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-const int duużo = 200005;
+int k , n;
+int a , b;
+int odp;
 
-vector<int> graf[duużo];
-int n , k;
-long long wynik = 0;
-
-
-void dfs (int x , int y , int p)
+struct G
 {
-    if (y == k)
+    vector<int> krawedzie;
+    bool odwiedzone;
+};
+
+G graf[200001];
+
+void DFS (int p , int odl)
+{
+    graf[p].odwiedzone = 1;
+    if (odl == k)
     {
-        wynik++;
+        odp++;
         return;
     }
-
-    for (int sasiad : graf[x])
+    else
     {
-        if (sasiad != p)
+        for (auto j : graf[p].krawedzie)
         {
-            dfs (sasiad , y + 1 , x);
+            if (graf[j].odwiedzone == 0)
+            {
+                DFS (j , odl + 1);
+            }
         }
     }
+
+    return;
+
 }
 
 int main ()
 {
-    ios_base::sync_with_stdio (0);
-    cin.tie (0);
-
     cin >> n >> k;
 
-    for (int i = 1; i < n; i++)
+    for (int i = 0; i < n - 1; i++)
     {
-        int a , b;
         cin >> a >> b;
-        graf[a].push_back (b);
-        graf[b].push_back (a);
+        graf[a].krawedzie.push_back (b);
+        graf[b].krawedzie.push_back (a);
     }
 
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i < n + 1; i++)
     {
-        dfs (i , 0 , -1);
+        DFS (i , 0);
+
+        for (int j = 1; j < n + 1; j++)
+        {
+            graf[j].odwiedzone = 0;
+        }
     }
 
-    cout << wynik / 2 << '\n';
+    cout << odp / 2;
 }
