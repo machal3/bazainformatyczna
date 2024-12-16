@@ -17,7 +17,7 @@ struct Krawedz
 const long long NIESKONCZONOSC = __LONG_LONG_MAX__;
 
 vector<vector<Krawedz>> graf;
-vector<long long> dystans , poprzedni_wierzcholek , poprzednia_krawedz;
+vector<long long> dystans1 , poprzedni_wierzcholek , poprzednia_krawedz;
 vector<bool> w_kolejce;
 
 void dodajKrawedz (long long od , long long do_wierzcholka , long long pojemnosc , long long koszt)
@@ -31,12 +31,12 @@ pair<long long , long long> jakaksfunkcja (long long p , long long dokad , long 
 	long long odp = 0 , koszt = 0;
 	while (odp < maks)
 	{
-		for (auto& d : dystans)
+		for (auto& d : dystans1)
 		{
 			d = NIESKONCZONOSC;
 		}
 
-		dystans[p] = 0;
+		dystans1[p] = 0;
 		w_kolejce.assign (graf.size () , false);
 
 		for (int i = 0; i < liczba_wierzcholkow; i++)
@@ -56,9 +56,9 @@ pair<long long , long long> jakaksfunkcja (long long p , long long dokad , long 
 
 			for (auto& nowy : graf[u])
 			{
-				if (nowy.pojemnosc > 0 && dystans[u] + nowy.koszt < dystans[nowy.do_wierzcholka])
+				if (nowy.pojemnosc > 0 && dystans1[u] + nowy.koszt < dystans1[nowy.do_wierzcholka])
 				{
-					dystans[nowy.do_wierzcholka] = dystans[u] + nowy.koszt;
+					dystans1[nowy.do_wierzcholka] = dystans1[u] + nowy.koszt;
 					poprzedni_wierzcholek[nowy.do_wierzcholka] = u;
 					poprzednia_krawedz[nowy.do_wierzcholka] = &nowy - &graf[u][0];
 					if (!w_kolejce[nowy.do_wierzcholka])
@@ -70,7 +70,7 @@ pair<long long , long long> jakaksfunkcja (long long p , long long dokad , long 
 			}
 		}
 
-		if (dystans[dokad] == NIESKONCZONOSC) break;
+		if (dystans1[dokad] == NIESKONCZONOSC) break;
 
 		long long d = maks - odp;
 		for (long long u = dokad; u != p; u = poprzedni_wierzcholek[u])
@@ -79,7 +79,7 @@ pair<long long , long long> jakaksfunkcja (long long p , long long dokad , long 
 		}
 
 		odp += d;
-		koszt += d * dystans[dokad];
+		koszt += d * dystans1[dokad];
 		for (long long u = dokad; u != p; u = poprzedni_wierzcholek[u])
 		{
 			Krawedz& e = graf[poprzedni_wierzcholek[u]][poprzednia_krawedz[u]];
@@ -99,7 +99,7 @@ int main ()
 
 
 	graf.resize (liczba_wierzcholkow + 1);
-	dystans.resize (liczba_wierzcholkow + 1);
+	dystans1.resize (liczba_wierzcholkow + 1);
 	poprzedni_wierzcholek.resize (liczba_wierzcholkow + 1);
 	poprzednia_krawedz.resize (liczba_wierzcholkow + 1);
 	w_kolejce.resize (liczba_wierzcholkow + 1);
