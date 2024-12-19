@@ -2,10 +2,10 @@
 #include <vector>
 using namespace std;
 
-const int MAXN = 1e6 + 5;
-vector<int> kraw[MAXN];
-int wejscie[MAXN] , wyjscie[MAXN];
-int drzewo[4 * MAXN];
+const int duzo_v2 = 1e6 + 5;
+vector<int> kraw[duzo_v2];
+int wejscie[duzo_v2] , wyjscie[duzo_v2];
+int drzewo[4 * duzo_v2];
 int tym;
 
 void dfs (int u , int rodzic)

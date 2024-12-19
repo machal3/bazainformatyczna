@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int MAXN = 200000;
-long long drzewko[4 * MAXN];
+const int duzo_v2 = 200000;
+long long drzewko[4 * duzo_v2];
 int wysokosc;
 
 void znajdzpotege (int n)
