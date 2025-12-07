@@ -7,8 +7,6 @@ bool odwiedzone[500010];
 vector <int> krawedzie[500010];
 
 int a , b;
-
-
 int n , m , p;
 
 void zapuszczamy (int w , int r)
